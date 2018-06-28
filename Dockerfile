@@ -86,5 +86,5 @@ ENV USER=root
 # Set python3 as the default version for the python executable
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 
-# start supervisor as deamon
-CMD ["/usr/bin/supervisord"]
+# start supervisor as deamon (force using python2, since supervisord <4 does not run on py3)
+CMD ["/usr/bin/python2 /usr/bin/supervisord"]
