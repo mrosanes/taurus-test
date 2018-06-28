@@ -83,5 +83,8 @@ ADD testioc.db /
 # add USER ENV (necessary for spyderlib in taurus.qt.qtgui.editor)
 ENV USER=root
 
+# Set python3 as the default version for the python executable
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+
 # start supervisor as deamon
 CMD ["/usr/bin/supervisord"]
