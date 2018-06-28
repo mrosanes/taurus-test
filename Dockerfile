@@ -28,28 +28,26 @@ RUN apt-get install -y tango-db
 RUN apt-get install -y tango-test
 
 # install taurus dependencies
-RUN apt-get install -y python-numpy \
-                       python-enum34 \
-                       python-guiqwt \
-                       python-h5py \
-                       python-lxml \
-                       python-pint \
-                       python-ply \
-                       python-pytango \
-                       python-qt4 \
-                       python-qwt5-qt4 \
-                       python-spyderlib \
-                       python-pymca5 \
+RUN apt-get install -y python3-numpy \
+                       python3-guiqwt \
+                       python3-h5py \
+                       python3-lxml \
+                       python3-pint \
+                       python3-ply \
+                       python3-pytango \
+                       python3-pyqt4 \
+                       python3-spyderlib \
+                       python3-pymca5 \
                        qt4-designer \
-                       python-sphinx-rtd-theme \
+                       python3-sphinx-rtd-theme \
                        graphviz \
-                       python-pyqtgraph
+                       python3-pyqtgraph
 
 # install some utilities
 RUN apt-get install -y git \
-                       python-pip \
+                       python3-pip \
                        vim \
-                       ipython \
+                       ipython3 \
                        procps
 
 # instal virtual monitor
@@ -77,7 +75,7 @@ RUN apt-get update
 RUN apt-get install -y epics-dev
 
 # install pyepics
-RUN pip install pyepics
+RUN pip3 install pyepics
 
 # copy test epics IOC database
 ADD testioc.db /
