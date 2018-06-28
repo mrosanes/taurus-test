@@ -87,4 +87,4 @@ ENV USER=root
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 
 # start supervisor as deamon (force using python2, since supervisord <4 does not run on py3)
-CMD ["/usr/bin/python2 /usr/bin/supervisord"]
+CMD ["/usr/bin/python2", "/usr/bin/supervisord"]
