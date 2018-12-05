@@ -33,12 +33,13 @@ RUN apt-get install -y python3-numpy \
                        python3-h5py \
                        python3-lxml \
                        python3-pint \
+                       python3-future \
                        python3-ply \
                        python3-pytango \
-                       python3-pyqt4 \
+                       python3-pyqt5 \
                        python3-spyderlib \
                        python3-pymca5 \
-                       qt4-designer \
+                       qttools5-dev-tools \
                        python3-sphinx-rtd-theme \
                        graphviz \
                        python3-pyqtgraph
