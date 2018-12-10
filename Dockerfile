@@ -27,6 +27,13 @@ RUN apt-get install -y tango-db
 #install tango-test DS
 RUN apt-get install -y tango-test
 
+# install pyqt4 dummy package to avoid dependency problem with python3-qwt 
+ADD python3-pyqt4-dummy_1.0_all.deb /
+RUN dpkg -i /python3-pyqt4-dummy_1.0_all.deb
+
+# define preferred Qt for qtchooser
+ENV QT_SELECT 5
+
 # install taurus dependencies
 RUN apt-get install -y python3-numpy \
                        python3-pyqt5 \
@@ -41,7 +48,8 @@ RUN apt-get install -y python3-numpy \
                        qttools5-dev-tools \
                        python3-sphinx-rtd-theme \
                        graphviz \
-                       python3-pyqtgraph
+                       python3-pyqtgraph \
+                       python3-guiqwt
                        
 # install some utilities
 RUN apt-get install -y git \
@@ -49,10 +57,6 @@ RUN apt-get install -y git \
                        vim \
                        ipython3 \
                        procps
-
-# install guiqwt without installing PyQt4
-RUN pip3 install guidata
-RUN pip3 install guiqwt
 
 # instal virtual monitor
 RUN apt-get install -y xvfb
