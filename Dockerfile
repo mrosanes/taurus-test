@@ -29,27 +29,30 @@ RUN apt-get install -y tango-test
 
 # install taurus dependencies
 RUN apt-get install -y python3-numpy \
-                       python3-guiqwt \
+                       python3-pyqt5 \
                        python3-h5py \
                        python3-lxml \
                        python3-pint \
                        python3-future \
                        python3-ply \
                        python3-pytango \
-                       python3-pyqt5 \
                        python3-spyderlib \
                        python3-pymca5 \
                        qttools5-dev-tools \
                        python3-sphinx-rtd-theme \
                        graphviz \
                        python3-pyqtgraph
-
+                       
 # install some utilities
 RUN apt-get install -y git \
                        python3-pip \
                        vim \
                        ipython3 \
                        procps
+
+# install guiqwt without installing PyQt4
+RUN pip3 install guidata
+RUN pip3 install guiqwt
 
 # instal virtual monitor
 RUN apt-get install -y xvfb
