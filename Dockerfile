@@ -37,6 +37,7 @@ ENV QT_SELECT 5
 # install taurus dependencies
 RUN apt-get install -y python3-numpy \
                        python3-pyqt5 \
+                       python3-pyqt5.qtopengl \
                        python3-h5py \
                        python3-lxml \
                        python3-pint \
